@@ -4,18 +4,18 @@ import NoAva from 'assets/no-ava.svg';
 const AVA = ['big-ava', 'small-ava'];
 
 interface IProps {
-  size?: string;
+  size: string;
   status: string;
 }
 
 const Avatar: FC<IProps> = ({ size, status }) => {
-  const checkAva = AVA.includes('size') ? 'big-ava' : AVA[0];
+  const checkAva = AVA.includes(size) ? size : AVA[0];
 
   return (
     <>
       <div className="main-img">
-        <img className={checkAva} src={NoAva} alt="No Ava" />
-        <div className={`badge ${status}`}></div>
+        <img className={checkAva} src={NoAva} alt={checkAva} />
+        <div className={checkAva === 'small-ava' ? `badge-${checkAva} ${status}` : `badge ${status}`}></div>
       </div>
     </>
   );
