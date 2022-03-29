@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
 import Logo from 'assets/logo.svg';
 import Send from 'assets/send.svg';
 import Back from 'assets/back.svg';
@@ -22,9 +24,9 @@ const Chat = () => {
     <div className={isOpenMessage ? 'container-chat is_message-open' : 'container-chat'}>
       <div className="left">
         <div className="header-top">
-          <a href="/">
+          <Link to="/">
             <img src={Logo} alt="logo" />
-          </a>
+          </Link>
           <h1 className="header-title ">Messages</h1>
           <div className="header-icon">
             <a href="/">

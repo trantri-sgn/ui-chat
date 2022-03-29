@@ -1,10 +1,17 @@
+@import 'variables';
+@import 'mixin';
+@import 'layout';
+
 @import 'components/Avatar';
 @import 'components/Icon';
-@import 'pages/Chat';
+@import 'components/Input';
+
+@import 'pages';
 
 body,
 html {
-  font-family: IBM Plex Sans !important;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 ::-webkit-scrollbar {

@@ -1,10 +1,19 @@
 import 'styles/index.scss';
 
-import React from 'react';
+import React, { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import Avatar from 'components/Avatar';
-import { IconCAll, IconCAM, IconMENU, IconPEN } from 'components/Icon';
-import Chat from 'pages/Chat';
+import Routes from 'routers';
+
+const AppContainer = () => {
+  return (
+    <Suspense fallback={<div></div>}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </Suspense>
+  );
+};
 
 function App() {
   return (
@@ -14,7 +23,8 @@ function App() {
       <IconCAll />
       <IconPEN />
       <IconMENU /> */}
-      <Chat />
+      <AppContainer />
+      {/* <Chat /> */}
     </div>
   );
 }

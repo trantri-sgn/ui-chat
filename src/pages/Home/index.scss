@@ -1,0 +1,111 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  width: 100vw;
+  background: #f9fdfe;
+}
+.container {
+  @include responsive(laptop) {
+    @include center;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .language {
+    display: flex;
+    align-items: center;
+    color: #{$secondary};
+    gap: 5px;
+    cursor: pointer;
+  }
+}
+
+.content {
+  display: grid;
+  place-items: center;
+  @include gridCols(2);
+  @include responsive(laptop) {
+    @include gridCols(1);
+  }
+
+  .right {
+    @include responsive(laptop) {
+      display: none;
+    }
+  }
+
+  .title {
+    width: 475px;
+    font-size: 48px;
+    font-weight: $bold;
+    line-height: 1.25;
+    background: linear-gradient(267.43deg, #{$primary} 18.32%, #{$orange} 98.31%);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 74px;
+    max-width: 475px;
+    @include responsive(laptop) {
+      width: 100%;
+      font-size: 36px;
+    }
+  }
+  .form {
+    width: 445px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: auto;
+    @include responsive(laptop) {
+      margin: auto;
+    }
+    @include responsive(mobile) {
+      width: 100%;
+    }
+  }
+  .btn {
+    @apply flex flex-col items-center gap-5;
+    .forgot-link {
+      font-size: 18px;
+      color: #4ebe99;
+      text-align: right;
+      cursor: pointer;
+      margin-left: auto;
+    }
+    .primary {
+      background: #{$primary};
+      color: white;
+    }
+    .md {
+      height: 55px;
+      width: 100%;
+      border-radius: 10px;
+      @include responsive(mobile) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-size: 34px;
+  font-weight: $medium;
+  color: #{$secondary};
+  @include responsive(tablet) {
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+  }
+  .app {
+    display: flex;
+    column-gap: 30px;
+  }
+}
